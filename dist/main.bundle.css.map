@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./styles/style.sass"],"names":[],"mappings":"AAEA;EACE,qBAHO;AAET,C","file":"main.bundle.css","sourcesContent":["$b-back: aliceblue\r\n\r\nbody\r\n  background: $b-back\r\n"],"sourceRoot":""}
