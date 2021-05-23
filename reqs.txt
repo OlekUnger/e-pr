@@ -1,0 +1,12 @@
+Webpack
+    Babel
+    Sass
+    ESLint
+    2 modes:
+        -dev
+            dev server, SourceMaps, EsLint
+        -prod
+            minified code
+Git
+    Production
+    Development
