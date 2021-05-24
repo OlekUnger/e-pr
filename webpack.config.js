@@ -25,9 +25,9 @@ module.exports = (env, argv) => {
             }),
             new MiniCssExtractPlugin({
                 filename: filename('css')
-            }),
+            })
         ]
-        if (isDev) base.push(new ESLintPlugin())
+        if (isDev) { base.push(new ESLintPlugin()) }
         return base
     }
     return {
@@ -80,11 +80,11 @@ module.exports = (env, argv) => {
         },
         devServer: {
             open: true,
-            watchContentBase: true // автоперезагрузка вместе кроме html
+            // watchContentBase: true // автоперезагрузка вместе кроме html
             // contentBase: path.join(__dirname, 'dist'),
             // compress: true,
-            //port: 9000, //или в package.json
-            // hot: true, // автоперезагрузка, кроме html
+            port: process.env.port || 9000,
+            hot: true, // автоперезагрузка, кроме html
         },
         target: 'web' // без этго не работает автоперезагрузка страницы
     }
