@@ -57,11 +57,8 @@ module.exports = (env, argv) => {
                 {
                     test: /\.s[ac]ss$/i,
                     use: [
-                        // Creates `style` nodes from JS strings
                         MiniCssExtractPlugin.loader,
-                        // Translates CSS into CommonJS
                         "css-loader",
-                        // Compiles Sass to CSS
                         "sass-loader",
                     ],
                 },
@@ -72,7 +69,8 @@ module.exports = (env, argv) => {
                     use: {
                         loader: "babel-loader",
                         options: {
-                            presets: ['@babel/preset-env']
+                            presets: ['@babel/preset-env'],
+                            // plugins: [ '@babel/plugin-proposal-class-properties']
                         }
                     }
                 }
