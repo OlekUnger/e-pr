@@ -4,20 +4,24 @@ const CODES = {
 }
 
 function createRow(content, index = '') {
+    const resize = index ? `<div class="row-resize" data-resize="row"></div>` : ''
     return `
-        <div class="row">
-            <div class="row_info">${index}</div>
+        <div class="row" data-row="${index}" data-type="resizable">
+            <div class="row_info">${index}${resize}</div>
             <div class="row_data">${content}</div>
         </div>
     `
 }
 
-function createCol(content) {
-    return `<div class="column">${content}</div>`
+function createCol(content, index) {
+    return `<div class="column" data-type="resizable" data-col="${index}">${content}
+                <div class="column-resize" data-resize="col"></div>
+           </div>
+        `
 }
 
-function createCell() {
-    return `<div class="cell" contenteditable></div>`
+function createCell(_, index) {
+    return `<div class="cell" data-col="${index}" contenteditable></div>`
 }
 
 export function createTable(rowsCount = 15) {
