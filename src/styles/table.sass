@@ -9,14 +9,32 @@
   overflow-x: auto
   padding-bottom: 2px
 
+  .column-resize, .row-resize
+    position: absolute
+    bottom: 0
+    right: 0
+    background: $primary-color
+    opacity: 0
+    transition: all 0.1s ease-in-out
+    z-index: 2
+    &:hover, &:active
+      opacity: 1
+
   .row
     display: flex
     flex-direction: row
     min-height: 20px
     height: $row-height
 
+    &-resize
+      left: 0
+      height: 4px
+      &:hover
+        cursor: row-resize
+
     &_info
       display: flex
+      position: relative
       justify-content: center
       align-items: center
       min-width: $info-cell-width
@@ -30,6 +48,7 @@
 
     .column
       display: flex
+      position: relative
       justify-content: center
       align-items: center
       background: #f8f9fa
@@ -39,6 +58,11 @@
       border: 1px solid $border-color
       border-top: 0
       border-left: 0
+      &-resize
+        top: 0
+        width: 4px
+        &:hover, &:active
+          cursor: col-resize
 
     .cell
       min-width: 40px
@@ -56,7 +80,7 @@
         border: none
         border-radius: 2px
         //outline: 2px solid #3c74ff
-        box-shadow: 0px 0px 0px 2px #3c74ff inset
+        box-shadow: 0px 0px 0px 2px $primary-color inset
         z-index: 2
 
 

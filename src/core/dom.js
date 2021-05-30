@@ -28,6 +28,24 @@ class Dom {
         return this
     }
 
+    css(styles = {}) {
+        Object.keys(styles).forEach(key => {
+            this.nativeElement.style[key] = styles[key]
+        })
+    }
+
+    // findAll(selector) {
+    //     return this.nativeElement.querySelectorAll()
+    // }
+
+    // get data() {
+    //     return this.nativeElement.dataset
+    // }
+
+    // getCoords(elem) {
+    //     return elem.getBoundingClientRect()
+    // }
+
     // on(eventType, fn) {
     //     this.nativeElement.addEventListener(eventType, fn)
     // }
